@@ -1,0 +1,62 @@
+﻿@using System.Web.UI.WebControls
+@model CondominioFacilDDD.MVC.ViewModels.PropietarioViewModel
+
+<ul class="breadcrumb">
+    <li>VOCÊ ESTA EM: </li>
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li class="active">
+        Propietários
+    </li>
+</ul>
+@{
+    ViewBag.Title = "Index";
+}
+
+<blockquote><h2>Propietários</h2></blockquote>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Listar Propietários</h2>
+           
+            @using (Html.BeginForm("ListarPropietarios", "Propietarios"))
+            {
+                <hr />
+                <p><input type=submit value="Lista de todos o propietários" /></p>
+            }
+            
+            @using (Html.BeginForm("Especiais", "Propietarios"))
+            {
+                <hr />
+                <p><input class=" bg-primary" type=submit value="Listar Propietarios Especiais" /></p>
+            }
+        </div>
+
+        <div class="col-md-4">
+            <h2>Buscar propietários</h2>
+            
+                @using (Html.BeginForm("BuscarNome", "Propietarios"))
+                {
+                    @Html.TextBox("nome","Digite um nome aqui", new {@size = 50, @class = "input-validation-error" })
+                    
+                    @Html.Hidden("page", "nome")
+                    <hr/>
+                    <p><input type=submit value="Buscar" /></p>
+                }
+            
+        </div>
+    </div>
+</div>
+
+

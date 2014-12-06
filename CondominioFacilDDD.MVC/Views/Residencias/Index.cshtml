@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CondominioFacilDDD.MVC.ViewModels.ResidenciaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NResidencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuaId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NResidencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuaId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResidenciaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ResidenciaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResidenciaId })
+        </td>
+    </tr>
+}
+
+</table>

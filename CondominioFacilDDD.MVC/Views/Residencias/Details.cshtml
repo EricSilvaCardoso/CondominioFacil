@@ -1,0 +1,34 @@
+﻿@model CondominioFacilDDD.MVC.ViewModels.ResidenciaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ResidenciaViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NResidencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NResidencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuaId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ResidenciaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

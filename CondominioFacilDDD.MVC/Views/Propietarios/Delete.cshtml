@@ -1,0 +1,76 @@
+﻿@model CondominioFacilDDD.MVC.ViewModels.PropietarioViewModel
+
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Propietários", "Index", "Propietarios")
+    </li>
+    <li class="active">
+        Excluir
+    </li>
+</ul>
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<blockquote><h2>Detalhes do propietário</h2></blockquote>
+
+<h3>Tem certeza de que deseja excluir este propietário(a)?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SobreNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SobreNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Propietários", "Index")
+        </div>
+    }
+</div>

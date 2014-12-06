@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CondominioFacilDDD.MVC.ViewModels.PropietarioViewModel>
+
+<ul class="breadcrumb">
+    <li>VOCÊ ESTA EM: </li>
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Propietários", "Index", "Propietarios")
+    </li>
+    <li class="active">
+        Lista
+    </li>
+</ul>
+
+@{
+    ViewBag.Title = "ListarPropietarios";
+}
+
+<blockquote><h2>Lista de propietários</h2></blockquote>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SobreNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SobreNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Edit", new { id = item.PropietarioId }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.PropietarioId }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.PropietarioId })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Voltar para propietários", "Index")
+</div>
