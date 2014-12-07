@@ -14,7 +14,7 @@
 </ul>
 
 @{
-    ViewBag.Title = "ListarPropietarios";
+    ViewBag.Title = "Listar Propietários";
 }
 
 <blockquote><h2>Lista de propietários</h2></blockquote>
@@ -58,7 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td>
-                @Html.ActionLink("Alterar", "Edit", new { id = item.PropietarioId }) |
+                @Html.ActionLink("Atualizar", "Edit", new { id = item.PropietarioId }) |
                 @Html.ActionLink("Detalhes", "Details", new { id = item.PropietarioId }) |
                 @Html.ActionLink("Excluir", "Delete", new { id = item.PropietarioId })
             </td>

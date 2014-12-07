@@ -17,13 +17,24 @@ namespace CondominioFacilDDD.MVC.Controllers
         }
 
 
-        // GET: Ruas
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Ruas
+        public ActionResult ListarRuas()
         {
             var ruaViewModel = Mapper.Map<IEnumerable<Rua>, IEnumerable<RuaViewModel>>(_ruaApp.GetAll());
             return View(ruaViewModel);
         }
 
+        [HttpPost]
+        public ActionResult BuscarNome(string nome)
+        {
+            var ruaViewModel = Mapper.Map<IEnumerable<Rua>, IEnumerable<RuaViewModel>>(_ruaApp.BuscarPorNome(nome));
+            return View(ruaViewModel);
+        }
 
         // GET: Ruas/Details/5
         public ActionResult Details(int id)

@@ -211,6 +211,8 @@
     <Content Include="Views\Residencias\Edit.cshtml" />
     <Content Include="Views\Propietarios\ListarPropietarios.cshtml" />
     <Content Include="Views\Propietarios\BuscarNome.cshtml" />
+    <Content Include="Views\Ruas\ListarRuas.cshtml" />
+    <Content Include="Views\Ruas\BuscarNome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

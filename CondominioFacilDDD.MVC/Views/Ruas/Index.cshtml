@@ -1,36 +1,55 @@
-﻿@model IEnumerable<CondominioFacilDDD.MVC.ViewModels.RuaViewModel>
+﻿@using System.Web.UI.WebControls
+@model CondominioFacilDDD.MVC.ViewModels.RuaViewModel
 
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li class="active">
+        Ruas
+    </li>
+</ul>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<blockquote><h2>Ruas</h2></blockquote>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Cadastro</h2>
+            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Create", "Ruas")'">Nova rua</button>
+        </div>
+        <div class="col-md-4">
+            <h2>Listar Ruas</h2>
+
+            @using (Html.BeginForm("ListarRuas", "Ruas"))
+            {
+                <p><button type=submit class="btn btn-default">Listar todas ruas</button></p>
+            }
+
+        </div>
+
+        <div class="col-md-4">
+            <h2>Buscar Ruas</h2>
+
+            @using (Html.BeginForm("BuscarNome", "Ruas"))
+            {
+                @Html.TextBoxFor(model => model.Nome, new { PlaceHolder = "Digite um nome" })
+
+                <hr />
+                <p><button type="submit" class="btn btn-default">Buscar</button></p>
+            }
 
 
 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RuaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RuaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RuaId })
-        </td>
-    </tr>
-}
 
-</table>
+        </div>
+    </div>
+</div>
+
+

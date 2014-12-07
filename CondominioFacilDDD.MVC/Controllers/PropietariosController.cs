@@ -27,12 +27,14 @@ namespace CondominioFacilDDD.MVC.Controllers
             var propietarioViewModel = Mapper.Map<IEnumerable<Propietario>, IEnumerable<PropietarioViewModel>>(_propietarioApp.GetAll());
             return View(propietarioViewModel);
         }
+
         [HttpPost]
         public ActionResult BuscarNome(string nome)
         {
             var propietarioViewModel = Mapper.Map<IEnumerable<Propietario>, IEnumerable<PropietarioViewModel>>(_propietarioApp.BuscarPorNome(nome));
             return View(propietarioViewModel);
         }
+
         public ActionResult Especiais()
         {
             var propietarioViewModel =
