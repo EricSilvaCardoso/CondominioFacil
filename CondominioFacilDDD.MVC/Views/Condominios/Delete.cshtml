@@ -1,16 +1,33 @@
 ﻿@model CondominioFacilDDD.MVC.ViewModels.CondominioViewModel
 
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Condominio", "Index", "Condominios")
+    </li>
+    <li class="active">
+        Cadastro
+    </li>
+</ul>
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir Condominios";
 }
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<blockquote><h2>Exclusão de Condominios</h2></blockquote>
+<h3>Tem certeza de que deseja excluir este condominio?</h3>
 <div>
-    <h4>CondominioViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropietarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Propietario.Nome)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.ResidenciaId)
         </dt>
@@ -19,13 +36,7 @@
             @Html.DisplayFor(model => model.ResidenciaId)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MoradorId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MoradorId)
-        </dd>
+        
 
     </dl>
 
@@ -33,8 +44,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para condominios", "Index")
         </div>
     }
 </div>
