@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace CondominioFacilDDD.MVC.ViewModels
 {
@@ -8,9 +9,11 @@ namespace CondominioFacilDDD.MVC.ViewModels
         [Key]
         public int CondominioId { get; set; }
 
+        [DisplayName("Numero da Residência")]
         public int ResidenciaId { get; set; }
 
-        public int MoradorId { get; set; }
+        [DisplayName("Nome do Propietário")]
+        public int PropietarioId { get; set; }
 
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }

@@ -112,7 +112,6 @@ namespace CondominioFacilDDD.MVC.Controllers
         {
             var propietario = _propietarioApp.GetById(id);
             _propietarioApp.Remove(propietario);
-
             return RedirectToAction("Index");
         }
     }

@@ -1,0 +1,41 @@
+﻿@model CondominioFacilDDD.MVC.ViewModels.CondominioViewModel
+
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li class="active">
+        Condominios
+    </li>
+</ul>
+@{
+    ViewBag.Title = "Index";
+}
+
+<blockquote><h2>Condomínios</h2></blockquote>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Cadastro</h2>
+            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Create", "Condominios")'">Novo Condomínio</button>
+        </div>
+
+
+        <div class="col-md-4">
+            <h2>Listar Condomínios</h2>
+
+            @using (Html.BeginForm("ListarCondominios", "Condominios"))
+            {
+                <p><button type=submit class="btn btn-default">Listar todos Condomínios</button></p>
+            }
+
+        </div>
+
+
+    </div>
+</div>
+
+
+

@@ -15,7 +15,7 @@ namespace CondominioFacilDDD.Infra.Data.EntityConfig
 
             HasRequired(p => p.Propietario)
                 .WithMany()
-                .HasForeignKey(p => p.PropietatioId);
+                .HasForeignKey(p => p.PropietarioId);
         }
     }
 }

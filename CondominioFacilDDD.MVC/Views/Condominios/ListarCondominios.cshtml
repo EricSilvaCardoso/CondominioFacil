@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CondominioFacilDDD.MVC.ViewModels.CondominioViewModel>
+
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Condomínios", "Index", "Condominios")
+    </li>
+    <li class="active">
+        Lista
+    </li>
+</ul>
+@{
+    ViewBag.Title = "Lista de Condomínios";
+}
+<blockquote><h2>Lista de Condomínios</h2></blockquote>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nome do Propietário")
+        </th>
+        <th>
+            @Html.DisplayName("Numero da Residência")
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Propietario.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Residencia.NResidencia )
+        </td>
+        
+        <td>
+            @Html.ActionLink("Atualizar", "Edit", new { id=item.CondominioId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.CondominioId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.CondominioId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -214,10 +214,15 @@
     <Content Include="Views\Ruas\ListarRuas.cshtml" />
     <Content Include="Views\Ruas\BuscarNome.cshtml" />
     <Content Include="Views\Residencias\ListarResidencias.cshtml" />
+    <Content Include="Views\Condominios\Index.cshtml" />
+    <Content Include="Views\Condominios\ListarCondominios.cshtml" />
+    <Content Include="Views\Condominios\Create.cshtml" />
+    <Content Include="Views\Condominios\Details.cshtml" />
+    <Content Include="Views\Condominios\Edit.cshtml" />
+    <Content Include="Views\Condominios\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Condominios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

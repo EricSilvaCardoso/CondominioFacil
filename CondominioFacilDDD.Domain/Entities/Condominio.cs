@@ -6,7 +6,7 @@ namespace CondominioFacilDDD.Domain.Entities
     {
         public int CondominioId { get; set; } // PK -> Primary Key 
         public int ResidenciaId { get; set; } //FK Foreign Key
-        public int PropietatioId { get; set; } //FK Foreign Key
+        public int PropietarioId { get; set; } //FK Foreign Key
         public DateTime DataCadastro { get; set; }
 
         public virtual Residencia Residencia { get; set; }
