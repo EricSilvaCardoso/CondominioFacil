@@ -1,11 +1,21 @@
 ﻿@model CondominioFacilDDD.MVC.ViewModels.ResidenciaViewModel
 
+<ul class="breadcrumb">
+    VOCÊ ESTA EM:
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Residência", "Index", "Residencias")
+    </li>
+    <li class="active">
+        Atualizar
+    </li>
+</ul>
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Atualizar Residência";
 }
-
-<h2>Edit</h2>
-
+<blockquote><h2>Atualizar Residência</h2></blockquote>
 
 @using (Html.BeginForm())
 {
@@ -17,6 +27,14 @@
         @Html.HiddenFor(model => model.ResidenciaId)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.RuaId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RuaId", String.Empty)
+                @Html.ValidationMessageFor(model => model.RuaId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.NResidencia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NResidencia, new { htmlAttributes = new { @class = "form-control" } })
@@ -25,23 +43,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RuaId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RuaId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RuaId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Atualizar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para residências", "Index")
 </div>
 
 @section Scripts {

@@ -1,10 +1,21 @@
 ﻿@model CondominioFacilDDD.MVC.ViewModels.ResidenciaViewModel
 
+<ul class="breadcrumb">
+    <span>VOCÊ ESTA EM:</span>
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Residência", "Index", "Residencias")
+    </li>
+    <li class="active">
+        Cadastro
+    </li>
+</ul>
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastro de Residência";
 }
-
-<h2>Create</h2>
+<blockquote><h2>Cadastro de Residência</h2></blockquote>
 
 
 @using (Html.BeginForm()) 
@@ -15,6 +26,14 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
+            @Html.LabelFor(model => model.RuaId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RuaId", String.Empty)
+                @Html.ValidationMessageFor(model => model.RuaId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.NResidencia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NResidencia, new { htmlAttributes = new { @class = "form-control" } })
@@ -22,24 +41,18 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.RuaId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RuaId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RuaId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para Residências", "Index")
 </div>
 
 @section Scripts {

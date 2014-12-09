@@ -1,14 +1,34 @@
 ﻿@model CondominioFacilDDD.MVC.ViewModels.ResidenciaViewModel
 
+<ul class="breadcrumb">
+    <span>VOCÊ ESTA EM:</span>
+    <li>
+        @Html.ActionLink("Home", "Index", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Residência", "Index", "Residencias")
+    </li>
+    <li class="active">
+        Detalhes
+    </li>
+</ul>
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes da Residência";
 }
-
-<h2>Details</h2>
+<blockquote><h2>Detalhes da Residência</h2></blockquote>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Nome da Rua")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rua.Nome)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.NResidencia)
         </dt>
@@ -17,17 +37,9 @@
             @Html.DisplayFor(model => model.NResidencia)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RuaId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RuaId)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ResidenciaId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.ResidenciaId }) |
+    @Html.ActionLink("Voltar para residências", "Index")
 </p>

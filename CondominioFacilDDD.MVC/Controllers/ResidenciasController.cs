@@ -19,14 +19,19 @@ namespace CondominioFacilDDD.MVC.Controllers
         }
 
 
-        // GET: Residencias
+       
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Residencias
+        public ActionResult ListarResidencias()
         {
             var residenciaViewModel =
                 Mapper.Map<IEnumerable<Residencia>, IEnumerable<ResidenciaViewModel>>(_residenciaApp.GetAll());
             return View(residenciaViewModel);
         }
-
 
         // GET: Residencias/Details/5
         public ActionResult Details(int id)
