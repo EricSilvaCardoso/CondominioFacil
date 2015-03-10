@@ -13,11 +13,11 @@ namespace CondominioFacilDDD.Application
     {
         private readonly ICondominioService _condominioService;
 
-        //public CondominioAppService(ICondominioService condominioService)
-        //    :base(condominioService)
-        //{
-        //    _condominioService = condominioService;
-        //}
+        public CondominioAppService(ICondominioService condominioService)
+            : base(condominioService)
+        {
+            _condominioService = condominioService;
+        }
 
     }
 }
